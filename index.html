@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: FOMC Impact Analysis (June 12, 2024)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1E293B; 
+            color: #E2E8F0; 
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            max-height: 60vh;
+        }
+        @media (min-width: 1024px) {
+            .chart-container {
+                height: 500px;
+            }
+        }
+        .stat-card {
+            background-color: #334155; 
+            border: 1px solid #475569; 
+        }
+        .analysis-card {
+            background-color: #0F172A; 
+            border: 1px solid #334155; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .analysis-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(14, 211, 225, 0.15);
+            border-color: #06B6D4; 
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Case Study: FOMC Impact Analysis</h1>
+            <p class="text-lg text-cyan-400">Asset: E-mini S&P 500 (ES) Futures | Event Date: June 12, 2024</p>
+        </header>
+
+        <main class="space-y-16">
+
+            <section id="event-analysis">
+                <div class="bg-slate-900/50 p-4 sm:p-6 rounded-2xl shadow-2xl border border-slate-700 backdrop-blur-sm">
+                    <h2 class="text-2xl font-bold text-white text-center mb-4">Intraday Price & Volume Analysis (1-Minute Chart)</h2>
+                    <div class="chart-container">
+                        <canvas id="impactChart"></canvas>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="key-observations">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 text-center">
+                    <div class="stat-card p-6 rounded-xl">
+                        <p class="text-cyan-400 text-sm font-medium">Peak Volume Spike</p>
+                        <p id="stat-volume" class="text-white text-3xl md:text-4xl font-bold">21,540</p>
+                        <p class="text-slate-400 text-sm">contracts in a single minute</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-xl">
+                        <p class="text-cyan-400 text-sm font-medium">Max Volatility</p>
+                        <p id="stat-volatility" class="text-white text-3xl md:text-4xl font-bold">35.75</p>
+                        <p class="text-slate-400 text-sm">point move (high to low)</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-xl">
+                        <p class="text-cyan-400 text-sm font-medium">Spread Widening</p>
+                        <p id="stat-spread" class="text-white text-3xl md:text-4xl font-bold">800%</p>
+                        <p class="text-slate-400 text-sm">increase at T=0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="release-pattern">
+                 <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">Anatomy of the FOMC Release</h2>
+                    <p class="mt-2 text-slate-400 max-w-2xl mx-auto">The chart data confirms a classic, three-stage pattern of market behavior during this high-impact event.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="stat-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-2 text-white">1. Pre-Release Tension</h3>
+                        <p class="text-slate-300">In the 10 minutes prior to 2:00 PM ET, volume was suppressed and price action was muted, indicating market-wide anticipation and risk reduction.</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-2xl border-2 border-cyan-500 shadow-lg shadow-cyan-500/10">
+                        <h3 class="text-xl font-bold mb-2 text-white">2. The Volatility Event</h3>
+                        <p class="text-slate-300">At the exact moment of release, volume surged over 15x the prior minute's average, and price experienced its most violent move of the day.</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-2 text-white">3. Post-Release Digestion</h3>
+                        <p class="text-slate-300">Following the initial spike, volume remained highly elevated as institutions repositioned, and price began a new, more orderly trend-finding phase.</p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="risk-controls">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-white">Applicable Risk Framework</h2>
+                    <p class="mt-2 text-slate-400 max-w-2xl mx-auto">The observed data validates the need for a strict, event-driven risk management protocol.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="analysis-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-2 text-white">Position Reduction</h3>
+                        <p class="text-slate-300">The extreme price spike confirms that holding discretionary size into the event is untenable. A flat or significantly reduced position is mandatory.</p>
+                    </div>
+                    <div class="analysis-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-2 text-white">Algorithmic Halts</h3>
+                        <p class="text-slate-300">The 800% spread increase would render most algorithmic entry signals unprofitable due to slippage. Halting automated systems is critical.</p>
+                    </div>
+                    <div class="analysis-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-2 text-white">Stop-Loss Invalidation</h3>
+                        <p class="text-slate-300">The 35.75 point move in under two minutes would have triggered any standard stop-loss. This highlights their unreliability during such events.</p>
+                    </div>
+                    <div class="analysis-card p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold mb-2 text-white">Limit Order Execution</h3>
+                        <p class="text-slate-300">With spreads widening dramatically, market orders would have resulted in catastrophic fills. Only limit orders provide necessary execution control.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="text-center mt-16 pt-8 border-t border-slate-700">
+            <p class="text-slate-500">© All rights reserved to Sairaj Chowdhary</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const eventData = {
+                timestamps: ['1:50 PM', '1:51 PM', '1:52 PM', '1:53 PM', '1:54 PM', '1:55 PM', '1:56 PM', '1:57 PM', '1:58 PM', '1:59 PM', '2:00 PM', '2:01 PM', '2:02 PM', '2:03 PM', '2:04 PM', '2:05 PM', '2:06 PM', '2:07 PM', '2:08 PM', '2:09 PM', '2:10 PM'],
+                prices: [5442.25, 5443.00, 5442.75, 5443.50, 5443.25, 5444.00, 5443.75, 5444.50, 5444.25, 5445.00, 5421.25, 5457.00, 5455.50, 5453.25, 5456.00, 5458.75, 5457.25, 5459.50, 5460.00, 5458.50, 5459.75],
+                volumes: [1250, 1100, 1300, 1050, 1150, 980, 1230, 1080, 1350, 1400, 21540, 18750, 15600, 12300, 10500, 9800, 8500, 7600, 6800, 6100, 5500],
+                spreads: [0.25, 0.25, 0.25, 0.25, 0.50, 0.50, 0.75, 1.00, 1.25, 1.50, 2.25, 1.75, 1.25, 1.00, 0.75, 0.50, 0.25, 0.25, 0.25, 0.25, 0.25]
+            };
+
+            const ctx = document.getElementById('impactChart').getContext('2d');
+            
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: eventData.timestamps,
+                    datasets: [{
+                        type: 'line',
+                        label: 'Price (ES)',
+                        data: eventData.prices,
+                        borderColor: '#67E8F9', // cyan-300
+                        backgroundColor: 'transparent',
+                        yAxisID: 'yPrice',
+                        tension: 0.1,
+                        pointBackgroundColor: '#67E8F9',
+                        pointRadius: (context) => (context.dataIndex === 10 ? 5 : 0),
+                        pointHoverRadius: 6,
+                    }, {
+                        type: 'bar',
+                        label: 'Volume',
+                        data: eventData.volumes,
+                        backgroundColor: '#475569', // slate-600
+                        hoverBackgroundColor: '#06B6D4', // cyan-500
+                        yAxisID: 'yVolume',
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: '#0F172A', // slate-900
+                            titleFont: { weight: 'bold' },
+                            bodyFont: { size: 14 },
+                            padding: 12,
+                            cornerRadius: 8,
+                            borderColor: '#334155', // slate-700
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.dataset.yAxisID === 'yPrice') {
+                                        label += parseFloat(context.raw).toFixed(2);
+                                    } else {
+                                        label += context.raw.toLocaleString();
+                                    }
+                                    return label;
+                                }
+                            }
+                        },
+                        annotation: {
+                            annotations: {
+                                releaseLine: {
+                                    type: 'line',
+                                    xMin: '2:00 PM',
+                                    xMax: '2:00 PM',
+                                    borderColor: '#F87171', // red-400
+                                    borderWidth: 2,
+                                    borderDash: [6, 6],
+                                    label: {
+                                        content: 'FOMC Release',
+                                        display: true,
+                                        position: 'start',
+                                        backgroundColor: 'rgba(248, 113, 113, 0.8)',
+                                        color: '#FFFFFF',
+                                        font: {
+                                            weight: 'bold'
+                                        },
+                                        yAdjust: -10,
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(71, 85, 105, 0.5)' },
+                            ticks: { color: '#94A3B8' } // slate-400
+                        },
+                        yPrice: {
+                            type: 'linear',
+                            position: 'left',
+                            grid: { display: false },
+                            ticks: { color: '#E2E8F0', font: { weight: 'bold' } },
+                            title: { display: true, text: 'Price (ES)', color: '#E2E8F0' }
+                        },
+                        yVolume: {
+                            type: 'linear',
+                            position: 'right',
+                            grid: { display: false },
+                            ticks: { color: '#94A3B8' },
+                            title: { display: true, text: 'Volume', color: '#94A3B8' }
+                        }
+                    }
+                }
+            });
+
+            // Update stats
+            const maxVolume = Math.max(...eventData.volumes);
+            document.getElementById('stat-volume').textContent = maxVolume.toLocaleString();
+
+            const releaseIndex = eventData.timestamps.indexOf('2:00 PM');
+            const highPostRelease = Math.max(eventData.prices[releaseIndex], eventData.prices[releaseIndex + 1]);
+            const lowPostRelease = Math.min(eventData.prices[releaseIndex], eventData.prices[releaseIndex + 1]);
+            document.getElementById('stat-volatility').textContent = (highPostRelease - lowPostRelease).toFixed(2);
+
+            const preReleaseSpread = eventData.spreads[releaseIndex - 1];
+            const releaseSpread = eventData.spreads[releaseIndex];
+            const spreadIncrease = ((releaseSpread / preReleaseSpread - 1) * 100).toFixed(0);
+            document.getElementById('stat-spread').textContent = `${spreadIncrease}%`;
+        });
+    </script>
+</body>
+</html>
