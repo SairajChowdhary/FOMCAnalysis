@@ -15,7 +15,6 @@ FUMCanalysis is a modular analysis toolkit designed for fast, flexible, and visu
   </g>
   <text x="80" y="90" font-family="Verdana" font-size="22" fill="#00897B" text-anchor="middle">FUMC</text>
 </svg>
-```
 
 ## Features
 
