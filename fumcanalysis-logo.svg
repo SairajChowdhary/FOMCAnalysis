@@ -1,0 +1,10 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="80" cy="80" r="70" stroke="#26A69A" stroke-width="10" fill="#E0F7FA"/>
+  <g>
+    <animateTransform attributeName="transform" type="rotate" from="0 80 80" to="360 80 80" dur="3s" repeatCount="indefinite"/>
+    <path d="M80 40 L100 80 L80 120 L60 80 Z" fill="#26A69A">
+      <animate attributeName="fill" values="#26A69A;#FFA726;#26A69A" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  <text x="80" y="90" font-family="Verdana" font-size="22" fill="#00897B" text-anchor="middle">FUMC</text>
+</svg>
