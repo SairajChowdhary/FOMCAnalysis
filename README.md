@@ -3,20 +3,6 @@
 FUMCanalysis is a modular analysis toolkit designed for fast, flexible, and visually engaging data analysis workflows.
 
 ## Logo
-
-
-![FUMCanalysis Logo](fumcanalysis-logo.svg)
-
-## Features
-
-### Modular Analysis
-
-
-
-### Live Data Visualization
-
-# FUMCanalysis
-
 ![FUMCanalysis Logo](fumcanalysis-logo.svg)
 
 ## Features
