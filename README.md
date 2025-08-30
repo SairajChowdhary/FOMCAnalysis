@@ -1,4 +1,4 @@
-# FUMCanalysis
+# FOMC Impact analysis
 
 FUMCanalysis is a modular analysis toolkit designed for fast, flexible, and visually engaging data analysis workflows.
 
