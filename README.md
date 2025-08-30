@@ -9,10 +9,6 @@ FUMCanalysis is a modular analysis toolkit designed for fast, flexible, and visu
 
 ![Modular Analysis](modular-analysis.svg)
 
-![Visualization Demo](visualization-demo.svg)
-
-![Easy Integration](easy-integration.svg)
-
 ### Easy Integration
 ## Installation
 
